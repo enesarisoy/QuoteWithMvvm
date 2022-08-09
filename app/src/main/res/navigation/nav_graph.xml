@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/quoteFragment">
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="com.ns.quotewithmvvm.ui.quote.QuoteFragment"
+        android:label="fragment_quote"
+        tools:layout="@layout/fragment_quote" >
+        <action
+            android:id="@+id/action_quoteFragment_to_savedFragment2"
+            app:destination="@id/savedFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFragment2"
+        android:name="com.ns.quotewithmvvm.ui.saved.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_savedFragment2_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+    </fragment>
+</navigation>
