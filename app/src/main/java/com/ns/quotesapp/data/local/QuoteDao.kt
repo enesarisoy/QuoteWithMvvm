@@ -15,4 +15,7 @@ interface QuoteDao {
 
     @Delete
     suspend fun deleteQuote(quote: Quote)
+
+    @Query("SELECT EXISTS (SELECT 1 FROM quote WHERE id = :id)")
+    fun checkExist(id: Int): Boolean
 }

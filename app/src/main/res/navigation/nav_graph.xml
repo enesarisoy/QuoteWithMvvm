@@ -6,7 +6,7 @@
     app:startDestination="@id/quoteFragment">
     <fragment
         android:id="@+id/quoteFragment"
-        android:name="com.ns.quotewithmvvm.ui.quote.QuoteFragment"
+        android:name="com.ns.quotesapp.ui.fragments.quote_fragment.QuoteFragment"
         android:label="fragment_quote"
         tools:layout="@layout/fragment_quote" >
         <action
@@ -15,11 +15,15 @@
     </fragment>
     <fragment
         android:id="@+id/savedFragment2"
-        android:name="com.ns.quotewithmvvm.ui.saved.SavedFragment"
+        android:name="com.ns.quotesapp.ui.fragments.saved_fragment.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
             android:id="@+id/action_savedFragment2_to_quoteFragment"
             app:destination="@id/quoteFragment" />
+        <argument
+            android:name="quote"
+            app:argType="com.ns.quotesapp.data.model.Quote" />
     </fragment>
+
 </navigation>

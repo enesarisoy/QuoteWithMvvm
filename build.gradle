@@ -8,7 +8,7 @@ buildscript {
         gsonVersion = '2.9.0'
         loggingVersion = '5.0.0-alpha.10'
         glideVersion = '4.13.2'
-        navigationVersion = '2.5.1'
+        navigationVersion = '2.5.0'
         roomVersion = '2.4.3'
     }
 

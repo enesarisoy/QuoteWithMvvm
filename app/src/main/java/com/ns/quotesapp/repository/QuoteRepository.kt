@@ -12,5 +12,6 @@ class QuoteRepository(
 
     suspend fun upsert(quote: Quote) = dao.upsert(quote)
     suspend fun delete(quote: Quote) = dao.deleteQuote(quote)
+    fun checkExists(id: Int) = dao.checkExist(id)
     fun getSavedQuotes() = dao.getSavedQuotes()
 }
