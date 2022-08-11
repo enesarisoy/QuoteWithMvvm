@@ -1,20 +1,16 @@
 package com.ns.quotesapp.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ns.quotesapp.R
 import com.ns.quotesapp.data.model.Quote
 import com.ns.quotesapp.databinding.SavedRowBinding
-import com.ns.quotesapp.util.PopupClick
+import com.ns.quotesapp.util.DeleteClick
 
 class SavedAdapter(
-    private val popupClick: PopupClick
+    private val deleteClick: DeleteClick
 ) : RecyclerView.Adapter<SavedAdapter.SavedViewHolder>() {
     inner class SavedViewHolder(val binding: SavedRowBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -50,7 +46,7 @@ class SavedAdapter(
             tvSavedQuote.text = quote.quote
             tvSavedAuth.text = quote.author
             ivVert.setOnClickListener {
-                popupClick.onClickPopup(quote)
+                deleteClick.onDelete(quote)
             }
         }
     }

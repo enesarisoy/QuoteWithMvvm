@@ -6,9 +6,11 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -60,7 +62,12 @@ class QuoteFragment : Fragment(R.layout.fragment_quote) {
             }
         })
 
+        binding.toolbar.title = ""
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_quoteFragment_to_savedFragment2)
+        }
     }
 
 
@@ -123,21 +130,6 @@ class QuoteFragment : Fragment(R.layout.fragment_quote) {
                 }
             }
         }
-        /*binding.fab.setOnClickListener {
-            if (isLiked) {
-
-                viewModel.deleteQuote(quote)
-                Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
-//                    Toast.makeText(context, "Already exists", Toast.LENGTH_SHORT).show()
-
-            } else {
-
-                viewModel.saveQuote(quote)
-                isLiked = true
-                Toast.makeText(context, "Liked", Toast.LENGTH_SHORT).show()
-            }
-//                QuoteFragmentDirections.actionQuoteFragmentToSavedFragment2(quote)
-        }*/
     }
 
 

@@ -47,18 +47,11 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun handleQuoteResponse(response: Response<List<Quote>>): Resource<Quote> {
         if (response.isSuccessful) {
-            response.body()?.let { resultResponse->
+            response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())
     }
-
-    fun checkExists(id: Int) = viewModelScope.launch {
-        repository.checkExists(id)
-    }
-
-
-
 
 }

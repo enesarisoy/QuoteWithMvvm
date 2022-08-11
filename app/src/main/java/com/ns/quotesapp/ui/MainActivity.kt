@@ -28,13 +28,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.title = ""
+       /* binding.toolbar.title = ""
         setSupportActionBar(binding.toolbar)
 
         binding.toolbar.setNavigationOnClickListener {
             binding.fragmentContainerView.findNavController()
                 .navigate(R.id.action_quoteFragment_to_savedFragment2)
-        }
+        }*/
 
     }
 }
