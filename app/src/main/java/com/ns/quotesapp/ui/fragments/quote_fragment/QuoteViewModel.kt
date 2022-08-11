@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.ns.quotesapp.data.local.QuoteDatabase
 import com.ns.quotesapp.data.model.Quote
 import com.ns.quotesapp.repository.QuoteRepository
-import com.ns.quotesapp.util.CheckInternet
 import com.ns.quotesapp.util.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -15,13 +14,11 @@ import retrofit2.Response
 class QuoteViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: QuoteRepository
-    private val internet: CheckInternet
     val quote: MutableLiveData<Resource<Quote>> = MutableLiveData()
     val saved: MutableLiveData<Boolean> = MutableLiveData(false)
 
     init {
         val dao = QuoteDatabase.invoke(application).quoteDao()
-        internet = CheckInternet(application)
         repository = QuoteRepository(dao)
         getAllQuotes()
     }

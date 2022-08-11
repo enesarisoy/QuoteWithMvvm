@@ -22,19 +22,8 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         )[QuoteViewModel::class.java]
 
-
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-       /* binding.toolbar.title = ""
-        setSupportActionBar(binding.toolbar)
-
-        binding.toolbar.setNavigationOnClickListener {
-            binding.fragmentContainerView.findNavController()
-                .navigate(R.id.action_quoteFragment_to_savedFragment2)
-        }*/
 
     }
 }

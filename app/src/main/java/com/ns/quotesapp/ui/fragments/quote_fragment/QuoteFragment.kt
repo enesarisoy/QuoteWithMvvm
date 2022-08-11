@@ -120,8 +120,6 @@ class QuoteFragment : Fragment(R.layout.fragment_quote) {
 
                     viewModel.deleteQuote(quote)
                     Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
-//                    Toast.makeText(context, "Already exists", Toast.LENGTH_SHORT).show()
-
                 } else {
 
                     viewModel.saveQuote(quote)
